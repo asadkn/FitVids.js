@@ -21,16 +21,15 @@
 
     if(!document.getElementById('fit-vids-style')) {
 
-      var div = document.createElement('div'),
-          ref = document.getElementsByTagName('base')[0] || document.getElementsByTagName('script')[0],
-          cssStyles = '&shy;<style>.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style>';
+      var div = document.createElement('style'),
+          ref = document.getElementsByTagName("body")[0],
+          cssStyles = '.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}';
 
       div.className = 'fit-vids-style';
       div.id = 'fit-vids-style';
-      div.style.display = 'none';
       div.innerHTML = cssStyles;
 
-      ref.parentNode.insertBefore(div,ref);
+      ref.appendChild(div);
 
     }
 
